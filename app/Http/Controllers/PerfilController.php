@@ -11,31 +11,37 @@ use Illuminate\Validation\Rules\Password;
 
 class PerfilController extends Controller
 {
+    /**
+     * Muestra el perfil del usuario autenticado (el que ha iniciado sesión)
+     */
     public function index()
     {
-        $user = Auth::user();
+        $user = Auth::user();// Obtiene el usuario actualmente autenticado
+        // Carga relaciones importantes para mostrar en el perfil (habilidades, categorías y logros)
         $user->load(['habilidades.categoria', 'logros']);
 
         $habilidades = $user->habilidades;
-        
+        // Cuenta cuántos trueques ha completado el usuario (como oferente o receptor)
         $truequesCompletados = $user->truequesOfrecidos()->where('estado', 'completado')->count() 
             + $user->truequesRecibidos()->where('estado', 'completado')->count();
-
+// Obtiene las 5 transacciones de puntos más recientes del usuario
         $transacciones = $user->transaccionesPuntos()
             ->orderBy('created_at', 'desc')
             ->limit(5)
             ->get();
-
+// Envía toda la información a la vista del perfil
         return view('perfil.index', compact('user', 'habilidades', 'truequesCompletados', 'transacciones'));
     }
-
+/**
+     * Muestra el perfil público de otro usuario (no necesariamente el autenticado)
+     */
     public function show(User $user)
     {
-        $usuario = $user;
-        $usuario->load(['habilidades.categoria', 'logros']);
-
+        $usuario = $user;// Se usa otra variable por claridad
+        $usuario->load(['habilidades.categoria', 'logros']); // Carga relaciones relacionadas
+ // Solo muestra las habilidades aprobadas de ese usuario
         $habilidades = $usuario->habilidades()->where('estado', 'aprobada')->get();
-        
+        // Cuenta la cantidad de trueques completados del usuario
         $truequesCompletados = $usuario->truequesOfrecidos()->where('estado', 'completado')->count() 
             + $usuario->truequesRecibidos()->where('estado', 'completado')->count();
 
@@ -45,9 +51,10 @@ class PerfilController extends Controller
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
+        // Cuenta cuántas valoraciones totales tiene
 
         $totalValoraciones = $usuario->valoracionesRecibidas()->count();
-
+  // Devuelve la vista con todos los datos del perfil del usuario
         return view('perfil.show', compact(
             'usuario',
             'habilidades',
@@ -59,13 +66,14 @@ class PerfilController extends Controller
 
     public function editar()
     {
+        // Devuelve la vista de edición con la información del usuario actual
         return view('perfil.editar', ['user' => Auth::user()]);
     }
 
     public function actualizar(Request $request)
     {
         $user = Auth::user();
-
+// Valida los datos enviados desde el formulario
         $validated = $request->validate([
             'name' => 'required|string|max:100',
             'email' => 'required|email|unique:users,email,' . $user->id,
