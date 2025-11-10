@@ -112,7 +112,7 @@ class TruequeController extends Controller
             return back()->with('error', 'No puedes hacer trueque con tu propia habilidad');
         }
 
-        // Calcular puntos del intercambio (promedio)
+        // Calcular puntos del intercambio (promedio).
         $puntos = round(($habilidadOfrece->puntos_sugeridos + $habilidadRecibe->puntos_sugeridos) / 2);
 
         $trueque = Trueque::create([
