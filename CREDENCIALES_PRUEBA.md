@@ -8,11 +8,11 @@ Para facilitar la evaluación del proyecto, se han creado varios usuarios de pru
 
 | Rol | Nombre | Email | Contraseña | Puntos Runa | Descripción |
 |-----|--------|-------|------------|-------------|-------------|
-| 👑 Admin | Administrador | `admin@runamaki.com` | `password` | 1029 | Usuario administrador con permisos completos |
-| 👩 Usuario | María Quispe | `maria@example.com` | `password` | 180 | Usuario regular con habilidades |
-| 👨 Usuario | Carlos Mendoza | `carlos@example.com` | `password` | 320 | Usuario regular activo |
-| 👩 Usuario | Ana Torres | `ana@example.com` | `password` | 150 | Usuario regular |
-| 👨 Usuario | Absalón | `absalon@example.com` | `password` | 250 | Usuario regular |
+| 👑 Admin | Administrador | `admin@runamaki.com` | `admin123` | 1029 | Usuario administrador con permisos completos |
+| 👩 Usuario | María Quispe | `maria@example.com` | `admin123` | 180 | Usuario regular con habilidades |
+| 👨 Usuario | Carlos Mendoza | `carlos@example.com` | `admin123` | 320 | Usuario regular activo |
+| 👩 Usuario | Ana Torres | `ana@example.com` | `admin123` | 150 | Usuario regular |
+| 👨 Usuario | Absalón | `absalon@example.com` | `admin123` | 250 | Usuario regular |
 
 ### 🚀 Cómo Usar
 
@@ -52,6 +52,6 @@ Con estas credenciales puedes explorar:
 
 ---
 
-**Nota**: Todas las contraseñas son `password` para facilitar las pruebas.
+**Nota**: Todas las contraseñas son `admin123` para facilitar las pruebas.
 
 ¡Disfruta explorando Runa Maki! 🎉

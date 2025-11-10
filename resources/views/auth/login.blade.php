@@ -40,28 +40,28 @@
                             <h3 class="text-sm font-semibold text-gray-700">Credenciales de Prueba</h3>
                         </div>
                         <div class="space-y-2 text-xs">
-                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('admin@runamaki.com', 'password')">
+                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('admin@runamaki.com', 'admin123')">
                                 <div>
                                     <p class="font-medium text-gray-800">👑 Administrador</p>
                                     <p class="text-gray-600">admin@runamaki.com</p>
                                 </div>
                                 <span class="text-indigo-600 text-xs">Clic para usar</span>
                             </div>
-                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('maria@example.com', 'password')">
+                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('maria@example.com', 'admin123')">
                                 <div>
                                     <p class="font-medium text-gray-800">👩 María Quispe</p>
                                     <p class="text-gray-600">maria@example.com</p>
                                 </div>
                                 <span class="text-indigo-600 text-xs">Clic para usar</span>
                             </div>
-                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('carlos@example.com', 'password')">
+                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('carlos@example.com', 'admin123')">
                                 <div>
                                     <p class="font-medium text-gray-800">👨 Carlos Mendoza</p>
                                     <p class="text-gray-600">carlos@example.com</p>
                                 </div>
                                 <span class="text-indigo-600 text-xs">Clic para usar</span>
                             </div>
-                            <p class="text-gray-500 italic mt-2 pt-2 border-t border-indigo-200">Contraseña para todos: <span class="font-mono font-semibold text-gray-700">password</span></p>
+                            <p class="text-gray-500 italic mt-2 pt-2 border-t border-indigo-200">Contraseña para todos: <span class="font-mono font-semibold text-gray-700">admin123</span></p>
                         </div>
                     </div>
 
