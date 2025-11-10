@@ -31,6 +31,40 @@
                 </div>
 
                 <div class="mt-8">
+                    <!-- Credenciales de Prueba -->
+                    <div class="mb-6 p-4 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-lg">
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <h3 class="text-sm font-semibold text-gray-700">Credenciales de Prueba</h3>
+                        </div>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('admin@runamaki.com', 'password')">
+                                <div>
+                                    <p class="font-medium text-gray-800">👑 Administrador</p>
+                                    <p class="text-gray-600">admin@runamaki.com</p>
+                                </div>
+                                <span class="text-indigo-600 text-xs">Clic para usar</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('maria@example.com', 'password')">
+                                <div>
+                                    <p class="font-medium text-gray-800">👩 María Quispe</p>
+                                    <p class="text-gray-600">maria@example.com</p>
+                                </div>
+                                <span class="text-indigo-600 text-xs">Clic para usar</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2 bg-white rounded hover:bg-indigo-50 transition cursor-pointer" onclick="fillLogin('carlos@example.com', 'password')">
+                                <div>
+                                    <p class="font-medium text-gray-800">👨 Carlos Mendoza</p>
+                                    <p class="text-gray-600">carlos@example.com</p>
+                                </div>
+                                <span class="text-indigo-600 text-xs">Clic para usar</span>
+                            </div>
+                            <p class="text-gray-500 italic mt-2 pt-2 border-t border-indigo-200">Contraseña para todos: <span class="font-mono font-semibold text-gray-700">password</span></p>
+                        </div>
+                    </div>
+
                     <!-- Session Status -->
                     @if (session('status'))
                         <div class="mb-4 font-medium text-sm text-green-600">
@@ -145,5 +179,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function fillLogin(email, password) {
+            document.getElementById('email').value = email;
+            document.getElementById('password').value = password;
+            
+            // Optional: scroll to form
+            document.getElementById('email').focus();
+        }
+    </script>
 </body>
 </html>
