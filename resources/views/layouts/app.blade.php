@@ -217,10 +217,13 @@
                     </div>
                 </div>
             </main>
+        </div>
+    </div>
 
-            <!-- Footer -->
-            <footer class="bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 dark:from-gray-950 dark:via-indigo-950 dark:to-purple-950 text-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Footer - Full Width -->
+    <footer class="bg-gradient-to-r from-gray-900 via-indigo-900 to-purple-900 dark:from-gray-950 dark:via-indigo-950 dark:to-purple-950 text-white">
+        <div class="{{ auth()->check() ? 'lg:ml-64' : '' }}">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <!-- Main Footer Content -->
                     <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         <!-- About Section -->
@@ -377,9 +380,8 @@
                         </div>
                     </div>
                 </div>
-            </footer>
-        </div>
-    </div>
+            </div>
+        </footer>
 
     <!-- Sidebar Toggle Script -->
     @auth
